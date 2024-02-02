@@ -1,20 +1,18 @@
-
 $(document).ready(function () {
+  const renderTweets = function (tweets) {
+    const $tweetContainer = $("#tweet-container");
+    tweets.forEach((tweetData) => {
+      const $tweet = createTweetElement(tweetData);
+      $tweetContainer.prepend($tweet);
+    });
+  };
 
-const renderTweets = function (tweets) {
-  const $tweetContainer = $("#tweet-container");
-  tweets.forEach((tweetData) => {
-    const $tweet = createTweetElement(tweetData);
-    $tweetContainer.append($tweet);
-  });
-};
+  const createTweetElement = function (tweet) {
+    const $tweet = $("<article>").addClass("tweet-components");
 
-const createTweetElement = function (tweet) {
-  const $tweet = $("<article>").addClass("tweet-components");
+    console.log("timeago is ", JSON.stringify(timeago, null, 4));
 
-  console.log("timeago is ", JSON.stringify(timeago, null, 4));
-
-  $tweet.html(`
+    $tweet.html(`
   <div class="img-username-refkey">
     <div class="img-username">
       <img
@@ -36,12 +34,10 @@ const createTweetElement = function (tweet) {
       <i class="fa-solid fa-heart"></i>
     </div>
   </div>`);
-  return $tweet;
-};
+    return $tweet;
+  };
 
-// call the function "renderTweets"
-
-  
+  // call the function "renderTweets"
 
   //submit the tweet using jquery
   //add an event listener that listens for submit
@@ -49,9 +45,17 @@ const createTweetElement = function (tweet) {
     //prevent the default behaviour (refresh)
 
     event.preventDefault();
-
+   
     //serialize form data
     const formData = $(this).serialize();
+    if (formData === null) {
+      alert(`We're going to need a bigger boat!`);
+      return;
+    }
+    if (formData.length > 140) {
+      alert(`We're going to need a smaller boat!`);
+      return;
+    }
     console.log(formData);
 
     //AJAX post req in client.js that send form to server
@@ -61,7 +65,6 @@ const createTweetElement = function (tweet) {
       $tweetContainer.empty();
       loadTweets();
     });
-    
   });
 
   const loadTweets = function () {
