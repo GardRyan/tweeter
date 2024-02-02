@@ -10,8 +10,6 @@ $(document).ready(function () {
   const createTweetElement = function (tweet) {
     const $tweet = $("<article>").addClass("tweet-components");
 
-    console.log("timeago is ", JSON.stringify(timeago, null, 4));
-
     $tweet.html(`
   <div class="img-username-refkey">
     <div class="img-username">
@@ -47,22 +45,26 @@ $(document).ready(function () {
     event.preventDefault();
    
     //serialize form data
-    const formData = $(this).serialize();
-    if (formData === null) {
+    const tweetText = $("#tweet-text").val();
+    const sanitizedText = $("<p>").text(tweetText).html();
+       
+    if (sanitizedText === null) {
       alert(`We're going to need a bigger boat!`);
       return;
     }
-    if (formData.length > 140) {
+    if (sanitizedText.length > 140) {
       alert(`We're going to need a smaller boat!`);
       return;
     }
-    console.log(formData);
+    console.log(sanitizedText);
+   
 
     //AJAX post req in client.js that send form to server
-    $.post("/tweets", formData, function (response) {
+    $.post("/tweets", {text: sanitizedText}, function (response) {
       console.log(response);
       const $tweetContainer = $("#tweet-container");
       $tweetContainer.empty();
+      $("#tweet-text").val('');
       loadTweets();
     });
   });

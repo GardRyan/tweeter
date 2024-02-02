@@ -80,27 +80,6 @@
       </section>
       <section id="tweet-container">
         <article class="tweet-components">
-          <div class="img-username-refkey">
-            <div class="img-username">
-              <img
-                src="/images/profile-hex.png"
-                alt="${tweet.user.name}'s avatar"
-              />
-              <span>$(tweet.user.name)</span>
-            </div>
-            <div>$(tweet.user.handle)</div>
-          </div>
-          <div class="tweet-content">
-            <p>${tweet.content.text}</p>
-          </div>
-          <div class="time-icons">
-            <p>${new Date(tweet.created_at).toLocaleString()}</p>
-            <div class="icons">
-              <i class="fa-solid fa-flag"></i>
-              <i class="fa-solid fa-retweet"></i>
-              <i class="fa-solid fa-heart"></i>
-            </div>
-          </div>
         </article>
       </section>
     </main>
