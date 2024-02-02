@@ -1,0 +1,18 @@
+header {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  padding-top: 100px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #d8ffcee3;
+  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+ 
+}
+
+header img {
+  height: 175px;
+  width: 175px;
+  margin-bottom: -50px;
+}
