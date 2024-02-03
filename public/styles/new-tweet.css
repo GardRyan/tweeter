@@ -5,9 +5,9 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  margin:100px;
-  margin-bottom: 300px;
+  margin: 25px;
   padding: 25px;
+  z-index: 2;
 }
 
 .new-tweet button {

@@ -1,39 +1,68 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
-html {
+
+/* Media query for mobile phones */
+@media only screen and (max-width: 600px) {
+  nav {
+  padding: 5px;
+  height: auto; 
+  flex-direction: column;
+  font-size: 20px;
+}
+  .fa-solid {
+    margin-top:0;
+  
+  } 
+ 
+/* Default styles for all devices
+* {
   box-sizing: border-box;
 }
-*, *:before, *:after {
-  box-sizing: inherit;
-}
 
-/*
- * Global layout stuff
- */
-
-
-nav.button {
-  font-family: 'Source Sans 3', sans-serif;
-  font-size: small;
-}
-body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-family: 'Source Sans 3', sans-serif;
-  font-size: 24px;
-}
-
-main {
-  width: 90%;
+header {
+  height: 400px;
+  width: 100%;
   display: flex;
+  padding-top: 100px;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background-color: #d8ffcee3;
+  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+header img {
+  height: 175px;
+  width: 175px;
+  margin-bottom: -50px;
+}
+
+.new-tweet {
+  height: 100px;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin: 100px;
+  margin-bottom: 300px;
+  padding: 25px;
+}
+
+/* Media query for tablets */
+/* @media screen and (max-width: 768px) {
+  header {
+    height: 300px;
+  }
+
+  header img {
+    height: 100px;
+    width: 100px;
+    margin-bottom: -30px;
+  }
+
+  .new-tweet {
+    margin: 50px;
+    margin-bottom: 150px;
+  }
+}
+
+ */ 
