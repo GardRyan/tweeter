@@ -46,3 +46,14 @@ form div {
 .counter.exceeded {
   color: red;
 }
+
+.message-container {
+  display: none;
+  color: red;
+  height: auto;
+  width: auto;
+  border: 3px solid red;
+  font-weight: bold;
+  padding: 10px;
+  margin-bottom: 50px;
+}
