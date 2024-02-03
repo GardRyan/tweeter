@@ -1,11 +1,11 @@
 .new-tweet {
-  height: 100px;
-  width: 70%;
+  height: 250px;
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  margin: 25px;
   padding: 25px;
   z-index: 2;
 }
@@ -21,8 +21,6 @@
 }
 
 #tweet-text {
-  height: -50px;
-  width: 100px;
   display: fixed;
   justify-content: center;
   width: 100%;
@@ -35,7 +33,6 @@
 form div {
   display: flex;
   justify-content: space-between;
-
 }
 
 
@@ -47,6 +44,7 @@ form div {
   color: red;
 }
 
+/* Don't touch! */
 .message-container {
   display: none;
   color: red;
@@ -55,5 +53,4 @@ form div {
   border: 3px solid red;
   font-weight: bold;
   padding: 10px;
-  margin-bottom: 50px;
 }

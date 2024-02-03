@@ -4,9 +4,8 @@ header {
   display: flex;
   padding-top: 150px;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background-color: #d8ffcee3;
+  background-color: #dab900;
   background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
  
 }
