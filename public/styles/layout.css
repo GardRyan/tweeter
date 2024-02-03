@@ -13,13 +13,11 @@
 
 /*Default styles for all devices */
 @media screen and (min-width: 769px) {
-  
   body {
     display: flex;
     justify-content: space-around;
-   
   }
-  
+
   nav {
     background-color: #4056a1;
   }
@@ -31,16 +29,11 @@
     float: left;
   }
 
-  .new-tweet, #tweet-container {
+  .new-tweet,
+  #tweet-container {
     display: flex;
     float: right;
     max-width: 100%;
     flex-direction: column;
-
   }
-  
-
-
 }
-
-  

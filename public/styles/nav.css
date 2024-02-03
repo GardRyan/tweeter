@@ -5,8 +5,8 @@ nav {
   height: 100px;
   width: 100%;
   align-items: center;
-  
-  font-family: 'Source Sans 3', sans-serif;
+
+  font-family: "Source Sans 3", sans-serif;
   z-index: 1;
 }
 nav .tweet-container {
@@ -17,8 +17,8 @@ nav .tweet-container {
 }
 
 nav .tweet-container span {
-  color: #FFFFFF;
-  font-family: 'Bungee', sans-serif; 
+  color: #ffffff;
+  font-family: "Bungee", sans-serif;
   align-self: center;
 }
 nav .slogan {
@@ -35,5 +35,4 @@ nav p {
 .fa-solid {
   align-self: center;
   color: orange;
- 
 }

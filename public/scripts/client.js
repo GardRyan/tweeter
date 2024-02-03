@@ -77,7 +77,7 @@ $(document).ready(function () {
   const displayMessage = function (message, messageType) {
     const $messageContainer = $(".message-container");
     const $message = $messageContainer.find("p");
-  
+
     $message.text(message).addClass(messageType);
     console.log($message);
 
@@ -86,8 +86,8 @@ $(document).ready(function () {
     }
 
     setTimeout(function () {
-      $messageContainer.slideUp(function() {
-        $message.text('').removeClass(messageType);
+      $messageContainer.slideUp(function () {
+        $message.text("").removeClass(messageType);
       });
     }, 5000);
   };
