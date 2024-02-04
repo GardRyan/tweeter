@@ -48,7 +48,7 @@ $(document).ready(function () {
     const tweetText = $("#tweet-text").val();
     const sanitizedText = $("<p>").text(tweetText).html();
 
-    if (sanitizedText === null) {
+    if (sanitizedText === null || sanitizedText.length === 0) {
       displayMessage(
         `We're going to need a bigger boat! Or at least a caption... `,
         "error"
