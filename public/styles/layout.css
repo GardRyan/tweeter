@@ -9,6 +9,12 @@
   nav {
     background-color: #4056a1;
   }
+  .new-tweet {
+    margin-top: 50px;
+  }
+  .message-container {
+    margin-top: -50px;
+  }
 }
 
 /*Default styles for all devices */
@@ -35,5 +41,12 @@
     float: right;
     max-width: 100%;
     flex-direction: column;
+  }
+  .new-tweet {
+    margin-top: 100px;
+  }
+
+  .message-container {
+    margin-top: -15px;
   }
 }
