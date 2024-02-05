@@ -63,16 +63,23 @@ $(document).ready(function () {
       );
       return;
     }
-    console.log(sanitizedText);
 
     //AJAX post req in client.js that send form to server
-    $.post("/tweets", { text: sanitizedText }, function (response) {
-      console.log(response);
-      const $tweetContainer = $("#tweet-container");
-      $tweetContainer.empty();
-      $("#tweet-text").val("");
-      loadTweets();
-    });
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      data: { text: sanitizedText },
+    })
+      .then(function (response) {
+        const $tweetContainer = $("#tweet-container");
+        $tweetContainer.empty();
+        $("#tweet-text").val("");
+        loadTweets();
+      })
+      .catch(function (error) {
+        // Error handling: log the error or show an alert/message.
+        console.error("Error fetching tweets:", error);
+      });
   });
 
   const displayMessage = function (message, messageType) {
@@ -80,7 +87,6 @@ $(document).ready(function () {
     const $message = $messageContainer.find("p");
 
     $message.text(message).addClass(messageType);
-    console.log($message);
 
     if ($messageContainer.is(":hidden")) {
       $messageContainer.slideDown();
@@ -97,10 +103,14 @@ $(document).ready(function () {
     $.ajax({
       method: "GET",
       url: "/tweets",
-    }).then(function (response) {
-      console.log(response);
-      renderTweets(response);
-    });
+    })
+      .then(function (response) {
+        renderTweets(response);
+      })
+      .catch(function (error) {
+        // Error handling: log the error or show an alert/message.
+        console.error("Error fetching tweets:", error);
+      });
+    loadTweets();
   };
-  loadTweets();
 });
