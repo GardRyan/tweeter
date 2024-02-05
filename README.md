@@ -17,3 +17,10 @@ This repository utilizes front-end skills in HTML, CSS, JS, jQuery and AJAX as w
 - Chance 1.0.2 or above
 - Body-Parser 1.15.2 or above
 - md5 2.1.0 or above
+
+## Screenshots of Project
+
+!["Screenshot of Computer view"](https://github.com/GardRyan/tweeter/blob/master/docs/Tweeter_ComputerView.png?raw=true)
+!["Screenshot of Phone view"](https://github.com/GardRyan/tweeter/blob/master/docs/Tweeter_PhoneView.png?raw=true)
+!["Screenshot of Tablet view"](https://github.com/GardRyan/tweeter/blob/master/docs/Tweeter_TabletView.png?raw=true)
+!["Screenshot of Error reporting"](https://github.com/GardRyan/tweeter/blob/master/docs/Tweeter_tooManyCharacters.png?raw=true)
