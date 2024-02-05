@@ -70,15 +70,15 @@ $(document).ready(function () {
       url: "/tweets",
       data: { text: sanitizedText },
     })
+      .catch(function (error) {
+        // Error handling: log the error or show an alert/message.
+        console.error("Error fetching tweets:", error);
+      })
       .then(function (response) {
         const $tweetContainer = $("#tweet-container");
         $tweetContainer.empty();
         $("#tweet-text").val("");
         loadTweets();
-      })
-      .catch(function (error) {
-        // Error handling: log the error or show an alert/message.
-        console.error("Error fetching tweets:", error);
       });
   });
 
@@ -104,13 +104,13 @@ $(document).ready(function () {
       method: "GET",
       url: "/tweets",
     })
-      .then(function (response) {
-        renderTweets(response);
-      })
       .catch(function (error) {
         // Error handling: log the error or show an alert/message.
         console.error("Error fetching tweets:", error);
+      })
+      .then(function (response) {
+        renderTweets(response);
       });
-    loadTweets();
   };
+  loadTweets();
 });
