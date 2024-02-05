@@ -48,11 +48,12 @@ $(document).ready(function () {
     const tweetText = $("#tweet-text").val();
     const sanitizedText = $("<p>").text(tweetText).html();
 
-    if (sanitizedText === null || sanitizedText.length === 0) {
+    if (sanitizedText === null || sanitizedText.trim().length === 0) {
       displayMessage(
         `We're going to need a bigger boat! Or at least a caption... `,
         "error"
       );
+      $("#tweet-text").val("");
       return;
     }
     if (sanitizedText.length > 140) {
